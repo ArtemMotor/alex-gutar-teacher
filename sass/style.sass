@@ -1,0 +1,374 @@
+@import "normalize.scss"
+@import "reset.scss"
+
+$light-gray-color: #F0F0F0
+$main-orange-color: #FF885A
+$main-blue-color: #5899FF
+
+@mixin properties-squares-second-section
+    width: 360px
+    height: 360px
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+    border-radius: 10px
+    position: relative
+    display: flex
+    align-items: flex-end
+    z-index: 1
+    
+    
+*
+    box-sizing: border-box
+
+body
+    position: relative
+@font-face 
+   font-family: 'MontserraT'
+   src: url(../fonts/Montserrat-Regular.ttf)
+   font-style: normal
+   font-weight: normal
+   
+@font-face 
+   font-family: 'MontserraT'
+   src: url(../fonts/Montserrat-SemiBold.ttf)
+   font-style: normal
+   font-weight: bold
+    
+html, body
+    font-family: "MontserraT"
+
+.container
+    max-width: 1140px
+    margin: 0 auto
+
+.main-section
+    position: relative
+    overflow: hidden
+    min-height: 800px
+    padding-top: 16px
+    background-color: $light-gray-color
+    &__nav-container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        height: 69px
+    &__logo
+        width: 134px
+    &__content-container
+        position: relative
+        display: flex
+        flex-direction: row
+    &__first-donut
+        position: absolute
+        top: 95px
+        right: 47px
+        z-index: 1
+    &__second-donut
+        position: absolute
+        right: -110px
+        top: 650px
+.nav-menu
+    &__list
+        display: flex
+        flex-direction: row
+    &__list-item
+        color: black
+        text-decoration: none
+        font-size: 18px
+        font-weight: 600
+        margin-right: 80px
+        &:last-child // эта запись обозначает полное название (nav-menu__list-item)
+            margin: 0px // очень удобно обращаться к псевдоклассам таким образом
+        &:hover
+            color: grey
+
+.left-wrapper-first-section
+    position: relative
+    &__img
+        position: relative
+        top: 2px
+        z-index: 1
+    &__rectangle-orange
+        width: 437.7px
+        height: 140.5px
+        background: $main-orange-color
+        border-radius: 100px // закругление
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) // тень
+        position: absolute
+        top: 100px
+        left: 135px
+        transform: rotate(-55deg) //разворачивает элемент
+    &__rectangle-blue
+       width: 368.05px
+       height: 135.69px
+       background: $main-blue-color
+       position: absolute
+       border-radius: 100px
+       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+       transform: rotate(-35deg)
+       top: 120px
+       left: 230px
+    &__rectangle-grey
+       position: absolute
+       width: 422.66px
+       height: 130.17px
+       background: #E3E3E3
+       border-radius: 100px
+       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+       top: 200px
+       left: 195px
+       transform: rotate(-13deg)
+.right-wrapper-first-section
+    width: 393px
+    position: absolute
+    right: 9px
+    top: 150px
+    padding-left: 10px
+    &__social-icons-box
+        margin-bottom: 1px
+        position: relative
+        z-index: 2
+    &__title
+        margin-bottom: 20px
+        position: relative
+        z-index: 2
+    &__main-text
+        max-width: 362px
+        margin-bottom: 40px
+        position: relative
+        z-index: 2
+    &__text-part
+        // margin-bottom задает расстояние между параграфами текста
+        margin-bottom: 1.5em
+        font-size: 16px
+        line-height: 1.3em
+        // line-height задает расстояние между строками в параграфе
+        &:hover
+            cursor: default
+        &:last-child
+            margin: 0px
+        
+.social-icons
+    display: inline-flex
+    flex-direction: row
+    a
+        width: 40px
+        height: 40px 
+    &__item
+        width: 45px
+        height: 45px
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-right: 17px
+        &:last-child
+            margin: 0px
+        &:hover
+            border-radius: 100px
+            background-color: $main-blue-color 
+    
+.title
+    position: relative
+    font-size: 72px
+    font-weight: 600
+    &:hover
+        cursor: default       
+    &__hr
+        // у этого тэга встроенные margin есть, так как он не добавлен в reset.scss. Об этом нужно помнить и обнулить его вручную
+        width: 65px
+        position: absolute
+        left: 20px
+        margin: 0px
+        border: none
+        border-top: 2px solid black
+        &:hover
+            cursor: default
+        &_second
+            top: 85px
+        &_third
+            top: 75px
+            left: 25px
+        &_footer
+            top: 75px   
+            left: 10px
+.buttons
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &__book-lesson
+        width: 200px
+        height: 60px
+        font-weight: 600
+        font-size: 18px
+        line-height: 19px
+        text-align: center
+        color: white
+        background-color: $main-orange-color
+        border: none
+        border-radius: 100px
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+        &:hover
+            cursor: pointer
+            border-radius: 100px
+            background-color: #FF9F7B
+    &__have-questions
+        width: 143px
+        height: 50px
+        font-size: 16px
+        display: flex
+        align-items: center
+        justify-content: space-around
+        
+        
+        &:hover
+            cursor: pointer
+            border-radius: 100px
+            background-color:  #E3E3E3
+
+.donut
+    width: 194px
+    height: 194px
+    background: linear-gradient(143.92deg, rgba(237, 123, 80, 0.5) 14.85%, rgba(72, 138, 234, 0.5) 53.25%, rgba(44, 44, 44, 0.5) 85.74%)
+    border-radius: 150px
+    display: flex
+    align-items: center
+    justify-content: center
+    &_big
+        width: 282px
+        height: 282px
+    &__hole
+        width: 129.33px
+        height: 129.33px
+        background: $light-gray-color
+        border-radius: 100px
+        &_big
+            width: 188px
+            height: 188px
+        &_white
+            background: white
+       
+.second-section
+    min-height: 750px
+    padding-top: 40px
+    &__title
+        margin-bottom: 40px
+    &__cards-box
+        margin-bottom: 50px
+    &__points-box
+        display: flex
+        justify-content: space-evenly
+    &__content-container
+        position: relative
+    &__first-donut
+        position: absolute
+        top: 20px
+        right: -80px
+    &__second-donut
+        position: absolute
+        top: 325px
+        left: -110px
+
+.cards-box
+    display: flex
+    justify-content: space-between
+    &__item
+        @include properties-squares-second-section
+        background-color: $light-gray-color
+        &_orange
+            background-color: $main-orange-color
+        &_blue
+            background-color: $main-blue-color
+    &__text
+        width: 270px
+        height: 88px
+        text-align: center
+        font-weight: 600
+        font-size: 32px
+        line-height: 39px
+        transform: rotate(90deg)
+        position: absolute
+        top: 136px
+        left: 131px
+        &:hover
+            cursor: default
+    
+.points-item
+    display: flex
+    align-items: center
+    &__img
+        margin-right: 15px
+        width: 80px
+    &__text
+        font-weight: 400
+        font-size: 16px
+        line-height: 18px
+        &:hover
+            cursor: default
+        span
+            font-weight: 600
+            font-size: 42px
+            line-height: 51px
+
+.third-section
+    position: relative
+    overflow: hidden
+    min-height: 680px
+    background-color: $light-gray-color
+    padding-top: 40px 
+    &__img
+        height: 683px
+        width: 489px
+    &__content-container
+        position: relative
+        display: flex
+        justify-content: space-between
+    &__title
+        margin-bottom: 30px
+    &__right-wrapper
+        position: absolute
+        left: 590px
+        top: 25px
+        max-width: 500px
+    &__text
+        // height: 360px
+        font-weight: 400
+        font-size: 18px
+        line-height: 26px
+        margin-bottom: 50px
+    &__buttons
+        width: 430px
+        justify-content: space-between
+    &__first-donut
+        position: absolute
+        right: -110px
+        top: -120px
+                
+.site-footer
+    padding-top: 30px
+    &__content-container
+        min-height: 270px
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: flex-end
+    &__main-content-wrapper
+        min-height: 200px
+        
+    &__img
+        position: absolute
+        bottom: 0px
+        left: -260px
+    &__title
+        margin-bottom: 30px
+  
+.up-btn
+    width: 75px
+    position: fixed
+    bottom: 5px
+    right: 5px
+    transition: 1s // скорость появления и исчезновения блока
+    opacity: 0 // прозрачность элемента(0 - совсем не видно)
+    &:hover
+        cursor: pointer
+        border-radius: 100px
+        background-color: #ffeae2
